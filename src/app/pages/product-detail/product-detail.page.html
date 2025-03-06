@@ -1,0 +1,31 @@
+<app-cabeza></app-cabeza>
+
+<ion-content>
+  <div class="product-detail-container">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <!-- Imagen del producto -->
+        <ion-col size="12" size-md="6">
+          <img [src]="detail.image" alt="{{ detail.title }}" class="product-image" />
+        </ion-col>
+
+        <!-- Detalles del producto -->
+        <ion-col size="12" size-md="6">
+          <div class="product-info">
+            <h2 class="product-title">{{ detail.title }}</h2>
+            <p class="product-category">{{ detail.category }}</p>
+            <p class="product-description">{{ detail.description }}</p>
+            <p class="product-price">$ {{ detail.price }}</p>
+            <p class="product-rating">⭐ {{ detail.rating?.rate }} ({{ detail.rating?.count }} reviews)</p>
+
+            <!-- Botón para añadir al carrito -->
+            <ion-button expand="block" color="primary"(click)="addToCart(detail)"  >
+              🛒 Añadir al carrito de compras
+            </ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+

@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-title>App Store</ion-title>
+    <ion-buttons slot="end">
+    <ion-back-button defaultHref="/home"></ion-back-button>
+     
+      <ion-button (click)="goToSummary()">
+        <ion-icon name="cart"></ion-icon>
+        <ion-badge color="danger" *ngIf="cartCount > 0">{{ cartCount }}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

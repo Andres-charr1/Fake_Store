@@ -1,0 +1,30 @@
+ion-content {
+    --background: linear-gradient(to bottom, #78c0e0, #ffffff); // Fondo degradado
+    display: flex;
+    flex-direction: column;
+    justify-content: center; // Centra verticalmente
+    align-items: center; // Centra horizontalmente
+    height: 100vh; // Ocupar toda la pantalla
+  
+    div {
+      text-align: center;
+    }
+  
+    img {
+      width: 150px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px; // Espacio entre imagen y botón
+    }
+  
+    ion-button {
+      width: 80%;
+      max-width: 300px;
+      font-weight: bold;
+      border-radius: 10px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+  }
+  

@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" text="Atrás"></ion-back-button>
+      <ion-back-button text="Mi tienda virtual"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="cart.length > 0; else emptyCart">
+    @for (product of cart; track product) {
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img [src]="product.image" alt="{{ product.title }}">
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ product.title }}</h2>
+        </ion-label>
+        <ion-text>{{ product.price | currency: 'USD' }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-button fill="outline" size="small" (click)="decreaseQuantity(product.id)">-</ion-button>
+        <ion-text style="margin: 0 10px;">{{ product.quantity }}</ion-text>
+        <ion-button fill="outline" size="small" (click)="increaseQuantity(product.id)">+</ion-button>
+        <ion-button fill="outline" size="small" color="danger" (click)="removeFromCart(product.id)">
+          Eliminar
+        </ion-button>
+      </ion-item>
+    }
+  </ion-list>
+
+  <ion-button *ngIf="cart.length > 0" expand="full" color="success" (click)="checkOut()">
+    Finalizar Compra
+  </ion-button>
+
+  <ion-card *ngIf="cart.length > 0">
+    <ion-card-content>
+      <h2>Total: {{ total | currency: 'USD' }}</h2>
+    </ion-card-content>
+  </ion-card>
+
+  <ng-template #emptyCart>
+    <ion-card>
+      <ion-card-content>Tu carrito está vacío.</ion-card-content>
+    </ion-card>
+  </ng-template>
+</ion-content>

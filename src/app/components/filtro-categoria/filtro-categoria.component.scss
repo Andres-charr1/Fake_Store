@@ -1,0 +1,25 @@
+.filter-container {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    flex-wrap: wrap;
+    gap: 10px; /* Espaciado entre botones */
+    margin-bottom: 20px;
+
+    button {
+      padding: 8px 15px;
+      border: none;
+      background-color: #78c0e0; /* Azul */
+      color: white;
+      cursor: pointer;
+      border-radius: 20px;
+      transition: 0.3s;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+  
+    button:hover {
+      background-color: #0056b3; /* Azul más oscuro */
+    }
+  }
+  

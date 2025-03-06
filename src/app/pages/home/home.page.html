@@ -1,0 +1,13 @@
+<!-- AQUI IMPORTAMOS EL HEADER -->
+<app-cabeza></app-cabeza>
+
+<ion-content>
+  <app-filtro-categoria (categorySelected)="applyFilter($event)"></app-filtro-categoria>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-md="6" size-lg="4" size-xl="3" *ngFor="let product of productos" [routerLink]="'/product-detail/' + product.id">
+        <app-product-card [product]="product"></app-product-card>
+      </ion-col>  
+    </ion-row>
+  </ion-grid>
+</ion-content>

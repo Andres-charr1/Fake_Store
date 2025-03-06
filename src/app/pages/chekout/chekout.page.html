@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" text="Atrás"></ion-back-button>
+      <ion-back-button text="Mi tienda virtual"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+    <ion-title>Chekout</ion-title>
+
+
+<ion-content>
+  <!-- Información Personal -->
+  <h2 class="section-title">Informacion Perosnal</h2>
+  <ion-list>
+    <div class="row">
+      <ion-item class="half-width">
+        <ion-label position="stacked">Nombre</ion-label>
+        <ion-input value="Jane" disabled></ion-input>
+      </ion-item>
+      <ion-item class="half-width">
+        <ion-label position="stacked">Apellidos</ion-label>
+        <ion-input value="Doe" disabled></ion-input>
+      </ion-item>
+    </div>
+    <div class="row">
+      <ion-item class="half-width">
+        <ion-label position="stacked">Pais</ion-label>
+        <ion-input value="Colombia" disabled></ion-input>
+      </ion-item>
+      <ion-item class="half-width">
+        <ion-label position="stacked">Ciudad</ion-label>
+        <ion-input value="City" disabled></ion-input>
+      </ion-item>
+    </div>
+    <ion-item>
+      <ion-label position="stacked">Correo</ion-label>
+      <ion-input value="Los caracoles cll 44 # 26-124" disabled></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <!-- Información de Pago -->
+  <h2 class="section-title">Informacion de pago</h2>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Ingresar numero de cuenta</ion-label>
+      <ion-input value="0123456789" disabled></ion-input>
+    </ion-item>
+    <div class="row">
+      <ion-item class="half-width">
+        <ion-label position="stacked">CVC</ion-label>
+        <ion-input value="123" disabled></ion-input>
+      </ion-item>
+      <ion-item class="half-width">
+        <ion-label position="stacked">Fecha de Vencimiento</ion-label>
+        <ion-input value="12/34" disabled></ion-input>
+      </ion-item>
+    </div>
+  </ion-list>
+
+  <!-- Total -->
+  <div class="total-container">
+    <span>Total</span>
+    <span class="total-price">{{ total | currency: 'USD' }}</span>
+    <ion-button expand="full" class="payment-button">Pago</ion-button>
+  </div>
+</ion-content>
